@@ -112,50 +112,21 @@
     {
       "slug": "experimental-economics",
       "title": "实验经济学研究",
-      "description": "研究 AI agents 与 synthetic subjects 在实验经济学中的应用，包括机制预检、试验筛选与人机博弈交互。",
+      "description": "研究 AI 代理与合成受试者在实验经济学中的应用，包括机制预检、参与者模拟、人机/机机博弈与方法论评估。",
       "fields": [
         "Synthetic subjects",
+        "实验协议",
         "机制预检",
-        "人机交互"
+        "人机/机机互动"
       ],
       "recommendation": [
-        "该方向适合做实验式验证。",
-        "可比较模拟受试者与真实受试者的行为差异。",
-        "要明确 synthetic agent 能复现什么、不能复现什么。"
+        "先看标准化定义与核心判据。",
+        "再按 A–F 六组浏览具体文献。",
+        "最后用关键词与年份筛选需要的 paper。"
       ],
-      "papers": [
-        {
-          "title": "Curated Slot：用于机制筛选的 synthetic subjects",
-          "authors": "待整理",
-          "year": 2025,
-          "venue": "Template entry",
-          "citation": "Citation 待补充。",
-          "abstract": "适合放置在真实实验前用 AI 模拟受试者，以发现脆弱 treatment 或说明文本问题的研究。",
-          "tags": [
-            "LLM",
-            "Experiment",
-            "Synthetic subjects"
-          ],
-          "link": "#",
-          "featured": true,
-          "path": "Starter"
-        },
-        {
-          "title": "Curated Slot：AI 辅助实验设计",
-          "authors": "待整理",
-          "year": 2024,
-          "venue": "Template entry",
-          "citation": "Citation 待补充。",
-          "abstract": "适合放置实验流程设计、稳健性预检、treatment 枚举与 AI 辅助 pre-registration 的相关研究。",
-          "tags": [
-            "Design",
-            "Experiment",
-            "Validation"
-          ],
-          "link": "#",
-          "featured": false,
-          "path": "Method"
-        }
+      "papers": [],
+      "chapterFiles": [
+        "ai-for-economics/experimental-economics-ai-agents-and-synthetic-subjects"
       ]
     },
     {

@@ -112,50 +112,21 @@
     {
       "slug": "experimental-economics",
       "title": "Experimental Economics Research",
-      "description": "AI agents and synthetic subjects in experimental economics, including mechanism pretesting, pilot screening, and human–AI strategic interaction.",
+      "description": "AI agents and synthetic subjects in experimental economics, covering mechanism pretesting, participant simulation, human–AI / AI–AI games, and methodological evaluation.",
       "fields": [
         "Synthetic subjects",
+        "Experimental protocol",
         "Mechanism pretesting",
-        "Human–AI interaction"
+        "Human–AI / AI–AI interaction"
       ],
       "recommendation": [
-        "Use this branch for lab-style validation.",
-        "Compare simulated subjects with human participants.",
-        "Document what the synthetic agents can and cannot reproduce."
+        "Start with the working definition and core criteria.",
+        "Then browse the six grouped sections from A to F.",
+        "Use keyword search and year filtering to locate specific papers."
       ],
-      "papers": [
-        {
-          "title": "Curated Slot: Synthetic Subjects for Mechanism Screening",
-          "authors": "To curate",
-          "year": 2025,
-          "venue": "Template entry",
-          "citation": "Citation to add.",
-          "abstract": "Best for papers that simulate participants before running real experiments, helping identify fragile treatments or instructions.",
-          "tags": [
-            "LLM",
-            "Experiment",
-            "Synthetic subjects"
-          ],
-          "link": "#",
-          "featured": true,
-          "path": "Starter"
-        },
-        {
-          "title": "Curated Slot: AI-Assisted Experimental Design",
-          "authors": "To curate",
-          "year": 2024,
-          "venue": "Template entry",
-          "citation": "Citation to add.",
-          "abstract": "Suitable for work on protocol design, robustness checks, treatment enumeration, or AI-guided pre-registration support.",
-          "tags": [
-            "Design",
-            "Experiment",
-            "Validation"
-          ],
-          "link": "#",
-          "featured": false,
-          "path": "Method"
-        }
+      "papers": [],
+      "chapterFiles": [
+        "ai-for-economics/experimental-economics-ai-agents-and-synthetic-subjects"
       ]
     },
     {

@@ -821,3 +821,84 @@ main {
     justify-content: center;
   }
 }
+
+
+.paper-taxonomy {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.paper-taxonomy-item {
+  font-size: 0.82rem;
+  color: var(--soft);
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.48);
+  border: 1px solid rgba(96, 77, 54, 0.08);
+}
+
+.chapter-grid,
+.summary-grid,
+.chapter-stack {
+  display: grid;
+  gap: 16px;
+}
+
+.chapter-grid,
+.summary-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.chapter-copy {
+  display: grid;
+  gap: 12px;
+}
+
+.chapter-copy p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.summary-stat {
+  border-radius: 20px;
+  padding: 18px 20px;
+  background: rgba(255,255,255,0.56);
+  border: 1px solid rgba(96, 77, 54, 0.08);
+  display: grid;
+  gap: 8px;
+}
+
+.summary-stat span {
+  color: var(--soft);
+  font-size: 0.84rem;
+}
+
+.summary-stat strong {
+  font-size: 1.5rem;
+  letter-spacing: -0.04em;
+}
+
+.group-block {
+  display: grid;
+  gap: 14px;
+}
+
+.group-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.group-head h3 {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .chapter-grid,
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+}

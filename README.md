@@ -73,3 +73,10 @@ Then open `http://localhost:8000`.
 ## GitHub Pages
 
 This project uses **hash routing** (`#/track/...`), so it works well on GitHub Pages without extra routing configuration.
+
+
+## New content structure
+
+- `data/{lang}/tracks/*.json`: track and subcategory metadata
+- `data/{lang}/chapters/**/*.json`: standalone chapter content files that can be edited independently
+- Example: the experimental-economics chapter is now maintained as an independent JSON file and auto-rendered on the site

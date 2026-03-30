@@ -234,21 +234,23 @@ function emptyState() {
 }
 
 function renderPaperCard(paper) {
-  const searchText = [paper.title, paper.abstract, paper.venue, paper.citation, ...(paper.tags || []), paper.trackTitle, paper.subTitle, paper.authors]
+  const searchText = [paper.title, paper.abstract, paper.venue, paper.citation, paper.publicationStatus, paper.subtheme, paper.groupTitle, ...(paper.tags || []), paper.trackTitle, paper.subTitle, paper.authors]
     .filter(Boolean)
     .join(' ')
     .toLowerCase();
   const location = paper.trackSlug && paper.subSlug
     ? `<a class="text-link" href="#/track/${escapeHtml(paper.trackSlug)}/subcategory/${escapeHtml(paper.subSlug)}">${escapeHtml(paper.trackTitle)} · ${escapeHtml(paper.subTitle)}</a>`
     : '';
+  const taxonomyBits = [paper.subtheme, paper.groupTitle].filter(Boolean);
   return `
     <article class="paper-card" data-year="${escapeHtml(paper.year)}" data-search="${escapeHtml(searchText)}">
       <div class="paper-topline">
-        <span class="year-chip">${escapeHtml(paper.year)}</span>
-        <span class="venue-chip">${escapeHtml(paper.venue)}</span>
+        <span class="year-chip">${escapeHtml(paper.yearNote || paper.year)}</span>
+        <span class="venue-chip">${escapeHtml(paper.publicationStatus || paper.venue || '—')}</span>
       </div>
       <h3>${escapeHtml(paper.title)}</h3>
-      <div class="paper-authors">${escapeHtml(paper.authors)}</div>
+      ${paper.authors ? `<div class="paper-authors">${escapeHtml(paper.authors)}</div>` : ''}
+      ${taxonomyBits.length ? `<div class="paper-taxonomy">${taxonomyBits.map((bit) => `<span class="paper-taxonomy-item">${escapeHtml(bit)}</span>`).join('')}</div>` : ''}
       <p class="paper-abstract">${escapeHtml(paper.abstract)}</p>
       <div class="citation-block">
         <span class="caption">${escapeHtml(t('common.citationLabel'))}</span>
@@ -267,6 +269,64 @@ function renderPaperCard(paper) {
       ${location ? `<div class="paper-location">${location}</div>` : ''}
     </article>
   `;
+}
+
+function chapterOverviewCard(chapter) {
+  const stats = (chapter.stats || []).map((item) => `
+    <div class="summary-stat">
+      <span>${escapeHtml(item.label)}</span>
+      <strong>${escapeHtml(item.value)}</strong>
+    </div>
+  `).join('');
+  return `
+    <section class="surface reveal">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">${escapeHtml(chapter.chapterEyebrow || t('subcategoryPage.papersEyebrow'))}</div>
+          <h2>${escapeHtml(chapter.chapterTitle)}</h2>
+        </div>
+        <p class="section-note">${escapeHtml(chapter.chapterIntro || '')}</p>
+      </div>
+      <div class="chapter-grid">
+        <article class="callout">
+          <h3>${escapeHtml(chapter.definitionTitle || 'Definition')}</h3>
+          <div class="chapter-copy">${(chapter.definition || []).map((para) => `<p>${escapeHtml(para)}</p>`).join('')}</div>
+        </article>
+        <article class="callout">
+          <h3>${escapeHtml(chapter.criteriaTitle || 'Criteria')}</h3>
+          <ul class="compact-list">${(chapter.criteria || []).map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
+        </article>
+      </div>
+      ${(chapter.stats || []).length ? `<div class="summary-grid">${stats}</div>` : ''}
+    </section>
+  `;
+}
+
+function renderChapterGroups(chapters = []) {
+  return chapters.map((chapter) => `
+    <section class="surface reveal">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">${escapeHtml(t('subcategoryPage.papersEyebrow'))}</div>
+          <h2>${escapeHtml(chapter.groupTitle || chapter.chapterTitle)}</h2>
+        </div>
+        <p class="section-note">${escapeHtml(chapter.groupNote || '')}</p>
+      </div>
+      <div class="chapter-stack">
+        ${(chapter.paperGroups || []).map((group) => `
+          <section class="group-block">
+            <div class="group-head">
+              <h3>${escapeHtml(group.title)}</h3>
+              <span class="pill">${group.papers?.length || 0} papers</span>
+            </div>
+            <div class="paper-grid">
+              ${(group.papers || []).map(renderPaperCard).join('')}
+            </div>
+          </section>
+        `).join('')}
+      </div>
+    </section>
+  `).join('');
 }
 
 function renderTimeline(timeline = []) {
@@ -417,6 +477,14 @@ function renderSubcategory(track, sub) {
   const recHtml = (sub.recommendation || []).length
     ? `<aside class="callout"><h3>${escapeHtml(t('common.routeLabel'))}</h3><ul class="compact-list">${sub.recommendation.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></aside>`
     : '';
+  const chapters = (sub.chapters || []).map((chapter) => ({
+    ...chapter,
+    papers: (chapter.papers || []).map((paper) => ({ ...paper, trackSlug: track.slug, trackTitle: track.title, subSlug: sub.slug, subTitle: sub.title })),
+    paperGroups: (chapter.paperGroups || []).map((group) => ({
+      ...group,
+      papers: (group.papers || []).map((paper) => ({ ...paper, trackSlug: track.slug, trackTitle: track.title, subSlug: sub.slug, subTitle: sub.title }))
+    }))
+  }));
 
   return `
     ${pageShell({
@@ -438,6 +506,8 @@ function renderSubcategory(track, sub) {
       <div class="tag-row">${(sub.fields || []).map((field) => `<span class="tag">${escapeHtml(field)}</span>`).join('')}</div>
     </section>
 
+    ${chapters.map(chapterOverviewCard).join('')}
+
     ${searchPanel({
       scopeId: `sub-${track.slug}-${sub.slug}`,
       title: t('subcategoryPage.finderTitle'),
@@ -445,6 +515,8 @@ function renderSubcategory(track, sub) {
       note: t('subcategoryPage.finderNote'),
       papers,
     })}
+
+    ${chapters.length ? renderChapterGroups(chapters) : ''}
 
     ${renderTimeline(sub.timeline || [])}
   `;
