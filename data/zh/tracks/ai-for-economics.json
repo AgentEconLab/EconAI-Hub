@@ -1,0 +1,309 @@
+{
+  "slug": "ai-for-economics",
+  "title": "AI for Economics",
+  "shortTitle": "AI for Economics",
+  "kicker": "主线 A",
+  "description": "将 AI 作为研究工具，用于经济行为与经济系统的建模、仿真、预测与分析。",
+  "intro": "这条主线聚焦“AI 作为经济学研究方法工具”的相关工作，涵盖行为建模、实验经济学、文本分析、因果评估与经济预测等方向。",
+  "readingPaths": [
+    {
+      "title": "入门路径",
+      "label": "概览 → 方法 → 应用",
+      "steps": [
+        "先看行为建模，把握经济主体的建模假设。",
+        "再看实验经济学，理解验证与对照的设计思路。",
+        "最后进入预测或政策评估，理解应用层面的落地方式。"
+      ]
+    },
+    {
+      "title": "仿真导向路径",
+      "label": "微观基础 → 仿真 → 决策支持",
+      "steps": [
+        "从经济主体行为建模入手。",
+        "再看因果推断与政策评估中的反事实分析。",
+        "最后进入预测与测度方向，理解实时部署与监测问题。"
+      ]
+    }
+  ],
+  "subcategories": [
+    {
+      "slug": "behavior-modeling",
+      "title": "经济主体行为建模",
+      "description": "研究如何利用 AI 方法刻画经济主体的有限理性、偏好、适应与序贯决策过程。",
+      "fields": [
+        "消费者与家庭决策",
+        "企业行为与定价",
+        "宏观—微观行为基础"
+      ],
+      "recommendation": [
+        "建议先看有经济理论约束的模型。",
+        "再比较 RL-based 与 LLM-based agent。",
+        "重点关注行为假设如何影响仿真真实性。"
+      ],
+      "timeline": [
+        {
+          "title": "一般均衡与经验宏观传统",
+          "description": "早期工作强调总量结构、简化关系与参数校准。"
+        },
+        {
+          "title": "DSGE 与跨期微观基础",
+          "description": "显式动态决策结构与冲击传导逐渐成为核心。"
+        },
+        {
+          "title": "异质主体与 agent-based simulation",
+          "description": "分布、交互与自底向上的涌现机制受到更多关注。"
+        },
+        {
+          "title": "RL 与 LLM agents",
+          "description": "AI 方法使适应性策略、语言推理与社会反馈建模成为可能。"
+        }
+      ],
+      "papers": [
+        {
+          "title": "Curated Slot：基于强化学习的家庭决策建模",
+          "authors": "待整理",
+          "year": 2024,
+          "venue": "Template entry",
+          "citation": "Citation 待补充。",
+          "abstract": "适合放置使用序贯优化方法学习家庭储蓄、劳动或投资决策的论文。",
+          "tags": [
+            "RL",
+            "Household",
+            "Dynamic decision"
+          ],
+          "link": "#",
+          "featured": true,
+          "path": "Starter"
+        },
+        {
+          "title": "Curated Slot：基于 LLM 的群体行为仿真",
+          "authors": "待整理",
+          "year": 2025,
+          "venue": "Template entry",
+          "citation": "Citation 待补充。",
+          "abstract": "适合放置利用语言模型模拟有限理性、社会互动与真实群体行为分布的论文。",
+          "tags": [
+            "LLM",
+            "Behavior",
+            "Simulation"
+          ],
+          "link": "#",
+          "featured": true,
+          "path": "Advanced"
+        },
+        {
+          "title": "Curated Slot：DSGE–AI 混合行为建模",
+          "authors": "待整理",
+          "year": 2023,
+          "venue": "Template entry",
+          "citation": "Citation 待补充。",
+          "abstract": "适合放置将经济结构模型与机器学习策略函数或行为近似相结合的研究。",
+          "tags": [
+            "DSGE",
+            "Hybrid",
+            "Policy"
+          ],
+          "link": "#",
+          "featured": false,
+          "path": "Bridge"
+        }
+      ]
+    },
+    {
+      "slug": "experimental-economics",
+      "title": "实验经济学研究",
+      "description": "研究 AI agents 与 synthetic subjects 在实验经济学中的应用，包括机制预检、试验筛选与人机博弈交互。",
+      "fields": [
+        "Synthetic subjects",
+        "机制预检",
+        "人机交互"
+      ],
+      "recommendation": [
+        "该方向适合做实验式验证。",
+        "可比较模拟受试者与真实受试者的行为差异。",
+        "要明确 synthetic agent 能复现什么、不能复现什么。"
+      ],
+      "papers": [
+        {
+          "title": "Curated Slot：用于机制筛选的 synthetic subjects",
+          "authors": "待整理",
+          "year": 2025,
+          "venue": "Template entry",
+          "citation": "Citation 待补充。",
+          "abstract": "适合放置在真实实验前用 AI 模拟受试者，以发现脆弱 treatment 或说明文本问题的研究。",
+          "tags": [
+            "LLM",
+            "Experiment",
+            "Synthetic subjects"
+          ],
+          "link": "#",
+          "featured": true,
+          "path": "Starter"
+        },
+        {
+          "title": "Curated Slot：AI 辅助实验设计",
+          "authors": "待整理",
+          "year": 2024,
+          "venue": "Template entry",
+          "citation": "Citation 待补充。",
+          "abstract": "适合放置实验流程设计、稳健性预检、treatment 枚举与 AI 辅助 pre-registration 的相关研究。",
+          "tags": [
+            "Design",
+            "Experiment",
+            "Validation"
+          ],
+          "link": "#",
+          "featured": false,
+          "path": "Method"
+        }
+      ]
+    },
+    {
+      "slug": "economic-text-analysis",
+      "title": "经济文本数据分析",
+      "description": "使用 NLP 与 LLM 从经济文本中提取叙事、预期、政策信号与制度知识。",
+      "fields": [
+        "政策与央行文本",
+        "新闻叙事",
+        "企业报告与披露"
+      ],
+      "recommendation": [
+        "先明确文本表示与标注策略。",
+        "再比较叙事抽取与预测价值之间的关系。",
+        "注意领域特定的评测标准。"
+      ],
+      "papers": [
+        {
+          "title": "Curated Slot：基于 LLM 的政策沟通文本挖掘",
+          "authors": "待整理",
+          "year": 2025,
+          "venue": "Template entry",
+          "citation": "Citation 待补充。",
+          "abstract": "适合放置对政策声明、演讲或监管沟通文本进行理解与分析的研究。",
+          "tags": [
+            "NLP",
+            "LLM",
+            "Policy text"
+          ],
+          "link": "#",
+          "featured": true,
+          "path": "Starter"
+        },
+        {
+          "title": "Curated Slot：经济新闻中的叙事信号抽取",
+          "authors": "待整理",
+          "year": 2023,
+          "venue": "Template entry",
+          "citation": "Citation 待补充。",
+          "abstract": "适合放置情绪、主题、叙事冲击与信息传播等方向的研究。",
+          "tags": [
+            "Text",
+            "News",
+            "Measurement"
+          ],
+          "link": "#",
+          "featured": false,
+          "path": "Applied"
+        }
+      ]
+    },
+    {
+      "slug": "causal-policy-evaluation",
+      "title": "因果推断与政策评估",
+      "description": "研究 AI 增强的处理效应估计、反事实预测、政策定向与结构性政策分析方法。",
+      "fields": [
+        "异质处理效应",
+        "反事实估计",
+        "定向政策评估"
+      ],
+      "recommendation": [
+        "要区分预测能力与因果识别。",
+        "说明 AI 在异质性估计或政策 targeting 上的增益。",
+        "把关键识别假设写清楚。"
+      ],
+      "papers": [
+        {
+          "title": "Curated Slot：用于异质政策效应分析的机器学习方法",
+          "authors": "待整理",
+          "year": 2024,
+          "venue": "Template entry",
+          "citation": "Citation 待补充。",
+          "abstract": "适合放置将因果估计与灵活函数近似结合起来用于政策分析的研究。",
+          "tags": [
+            "Causal",
+            "Policy",
+            "ML"
+          ],
+          "link": "#",
+          "featured": true,
+          "path": "Starter"
+        },
+        {
+          "title": "Curated Slot：反事实政策学习",
+          "authors": "待整理",
+          "year": 2023,
+          "venue": "Template entry",
+          "citation": "Citation 待补充。",
+          "abstract": "适合放置政策 targeting、uplift modeling、off-policy evaluation 与结构性反事实系统的研究。",
+          "tags": [
+            "Counterfactual",
+            "Evaluation",
+            "Decision"
+          ],
+          "link": "#",
+          "featured": false,
+          "path": "Method"
+        }
+      ]
+    },
+    {
+      "slug": "forecasting-measurement",
+      "title": "经济预测与经济测度",
+      "description": "研究 AI 在宏观 nowcasting、市场预测、另类数据测度与实时经济指标构建中的应用。",
+      "fields": [
+        "Nowcasting",
+        "另类数据",
+        "预测组合"
+      ],
+      "recommendation": [
+        "该方向更偏部署导向。",
+        "要平衡 timeliness 的提升与可解释性的代价。",
+        "说明另类数据是如何进入整个流水线的。"
+      ],
+      "papers": [
+        {
+          "title": "Curated Slot：AI 用于宏观经济 nowcasting",
+          "authors": "待整理",
+          "year": 2024,
+          "venue": "Template entry",
+          "citation": "Citation 待补充。",
+          "abstract": "适合放置混频指标、高频宏观信号与实时预测系统相关研究。",
+          "tags": [
+            "Forecasting",
+            "Macro",
+            "Time series"
+          ],
+          "link": "#",
+          "featured": true,
+          "path": "Starter"
+        },
+        {
+          "title": "Curated Slot：另类数据驱动的经济测度",
+          "authors": "待整理",
+          "year": 2025,
+          "venue": "Template entry",
+          "citation": "Citation 待补充。",
+          "abstract": "适合放置将平台、交易、文本或遥感数据转化为经济指标的研究。",
+          "tags": [
+            "Measurement",
+            "Data",
+            "Indicator"
+          ],
+          "link": "#",
+          "featured": false,
+          "path": "Applied"
+        }
+      ]
+    }
+  ]
+}

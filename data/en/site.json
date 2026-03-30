@@ -1,0 +1,109 @@
+{
+  "siteTitle": "AI + Economics Research Atlas",
+  "brandShort": "AE",
+  "trackFiles": [
+    "ai-for-economics",
+    "agentic-economy"
+  ],
+  "nav": {
+    "home": "Home",
+    "ai": "AI for Economics",
+    "agentic": "Agentic Economy"
+  },
+  "hero": {
+    "eyebrow": "Research gateway · bilingual · JSON-driven",
+    "titlePrefix": "A paper-grade front end for",
+    "titleAccent": "AI × Economics",
+    "description": "Browse two core tracks, drill into curated subcategories, search papers by keyword, filter by year, and maintain your content entirely through structured JSON files.",
+    "primaryCta": "Explore tracks",
+    "secondaryCta": "Open paper finder",
+    "panels": [
+      {
+        "label": "Track A",
+        "title": "AI for Economics",
+        "text": "AI as a research instrument for modeling, simulation, forecasting, causal analysis, and policy design."
+      },
+      {
+        "label": "Track B",
+        "title": "Agentic Economy",
+        "text": "AI agents as producers, workers, market participants, and governance objects inside economic systems."
+      }
+    ],
+    "stats": [
+      {
+        "label": "Bilingual UI",
+        "value": "ZH / EN"
+      },
+      {
+        "label": "Render source",
+        "value": "JSON"
+      },
+      {
+        "label": "Paper filters",
+        "value": "Keyword + Year"
+      },
+      {
+        "label": "Academic extras",
+        "value": "Citation / Tags / Paths"
+      }
+    ]
+  },
+  "home": {
+    "tracksEyebrow": "Core structure",
+    "tracksTitle": "Choose a research track",
+    "tracksNote": "Each track expands into subcategories, reading paths, timelines, and paper cards rendered directly from JSON.",
+    "finderEyebrow": "Paper finder",
+    "finderTitle": "Search the full atlas",
+    "finderNote": "Use keyword search and year filtering to locate papers quickly across all tracks.",
+    "featuredEyebrow": "Featured samples",
+    "featuredTitle": "Example paper cards",
+    "featuredNote": "These cards demonstrate the rendering schema. Replace or expand them by editing the JSON data files only."
+  },
+  "trackPage": {
+    "overviewEyebrow": "Overview",
+    "overviewTitle": "Subcategories",
+    "overviewNote": "Open a subcategory to browse its paper list and the optional evolution timeline.",
+    "pathEyebrow": "Recommended reading",
+    "pathTitle": "Suggested reading paths",
+    "pathNote": "Designed for newcomers, literature mapping, or syllabus design.",
+    "finderEyebrow": "Track finder",
+    "finderTitle": "Search within this track",
+    "finderNote": "Filter across all papers under the current research track."
+  },
+  "subcategoryPage": {
+    "finderEyebrow": "Subcategory finder",
+    "finderTitle": "Search this paper list",
+    "finderNote": "Search by keyword or year, then click a tag to refine quickly.",
+    "timelineEyebrow": "Method evolution",
+    "timelineTitle": "Compact roadmap",
+    "timelineNote": "A concise progression from earlier modeling traditions to contemporary AI-native approaches.",
+    "papersEyebrow": "Paper list",
+    "papersTitle": "Curated cards",
+    "papersNote": "Each card supports citation text, tags, venue, year, and external links."
+  },
+  "common": {
+    "homeCrumb": "Home",
+    "backToTrack": "Back to track",
+    "openSubcategory": "Open subcategory",
+    "openTrack": "Open track",
+    "originalLink": "Original link",
+    "copyCitation": "Copy citation",
+    "copied": "Citation copied",
+    "citationLabel": "Citation",
+    "tagsLabel": "Tags",
+    "routeLabel": "Reading path",
+    "filtersLabel": "Filters",
+    "keywordLabel": "Keyword",
+    "keywordPlaceholder": "Search title, abstract, venue, tags…",
+    "yearLabel": "Year",
+    "allYears": "All years",
+    "resetFilters": "Reset",
+    "noResultsTitle": "No matching papers",
+    "noResultsText": "Try another keyword or switch back to all years.",
+    "resultsPrefix": "Results",
+    "emptyTitle": "No papers yet",
+    "emptyText": "Add paper entries in the JSON files to populate this section.",
+    "maintainedBy": "Maintained through JSON data files. No manual HTML authoring is needed for paper pages.",
+    "footerNote": "Designed for GitHub Pages, bilingual research portals, and long-term literature curation."
+  }
+}

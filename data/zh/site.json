@@ -1,0 +1,109 @@
+{
+  "siteTitle": "AI + Economics Research Atlas",
+  "brandShort": "AE",
+  "trackFiles": [
+    "ai-for-economics",
+    "agentic-economy"
+  ],
+  "nav": {
+    "home": "首页",
+    "ai": "AI for Economics",
+    "agentic": "Agentic Economy"
+  },
+  "hero": {
+    "eyebrow": "研究入口 · 中英双语 · JSON 驱动",
+    "titlePrefix": "一个面向",
+    "titleAccent": "AI × Economics",
+    "description": "从两条主线进入该领域：按主题浏览、按子方向展开、按关键词与年份搜索论文，并通过结构化 JSON 文件持续维护内容。",
+    "primaryCta": "浏览研究主线",
+    "secondaryCta": "打开论文搜索",
+    "panels": [
+      {
+        "label": "主线 A",
+        "title": "AI for Economics",
+        "text": "将 AI 作为研究工具，用于经济建模、仿真、预测、因果分析与政策设计。"
+      },
+      {
+        "label": "主线 B",
+        "title": "Agentic Economy",
+        "text": "将 AI agent 视为经济系统中的生产者、工作者、交易参与者与治理对象。"
+      }
+    ],
+    "stats": [
+      {
+        "label": "双语界面",
+        "value": "中 / 英"
+      },
+      {
+        "label": "渲染来源",
+        "value": "JSON"
+      },
+      {
+        "label": "论文筛选",
+        "value": "关键词 + 年份"
+      },
+      {
+        "label": "学术增强",
+        "value": "Citation / Tags / Path"
+      }
+    ]
+  },
+  "home": {
+    "tracksEyebrow": "整体结构",
+    "tracksTitle": "选择一条研究主线",
+    "tracksNote": "每条主线都可继续展开为子方向、推荐阅读路径、方法演化时间线与论文卡片，并全部由 JSON 自动生成。",
+    "finderEyebrow": "论文搜索",
+    "finderTitle": "搜索整个图谱",
+    "finderNote": "按关键词与年份快速定位不同主线下的论文条目。",
+    "featuredEyebrow": "示例卡片",
+    "featuredTitle": "论文展示样式",
+    "featuredNote": "这里用于展示渲染结构。后续你只需修改 JSON 数据文件，无需手写 HTML。"
+  },
+  "trackPage": {
+    "overviewEyebrow": "概览",
+    "overviewTitle": "子方向",
+    "overviewNote": "点击子方向进入对应页面，查看论文列表与可选的方法演化时间线。",
+    "pathEyebrow": "推荐阅读",
+    "pathTitle": "阅读路径建议",
+    "pathNote": "适合入门导读、文献综述梳理与课程内容组织。",
+    "finderEyebrow": "主线内搜索",
+    "finderTitle": "搜索当前主线",
+    "finderNote": "在当前研究主线的全部论文条目中进行筛选。"
+  },
+  "subcategoryPage": {
+    "finderEyebrow": "子方向搜索",
+    "finderTitle": "搜索当前论文列表",
+    "finderNote": "支持关键词与年份筛选，也可以直接点击 tag 快速过滤。",
+    "timelineEyebrow": "方法演化",
+    "timelineTitle": "紧凑路线图",
+    "timelineNote": "从早期经济建模传统过渡到当代 AI-native 方法的一个简洁脉络。",
+    "papersEyebrow": "论文列表",
+    "papersTitle": "结构化论文卡片",
+    "papersNote": "每张卡片均支持 citation、tag、venue、年份与外部链接。"
+  },
+  "common": {
+    "homeCrumb": "首页",
+    "backToTrack": "返回主线",
+    "openSubcategory": "打开子方向",
+    "openTrack": "打开主线",
+    "originalLink": "原文链接",
+    "copyCitation": "复制 citation",
+    "copied": "已复制 citation",
+    "citationLabel": "Citation",
+    "tagsLabel": "Tags",
+    "routeLabel": "阅读路径",
+    "filtersLabel": "筛选",
+    "keywordLabel": "关键词",
+    "keywordPlaceholder": "搜索标题、摘要、venue、tag…",
+    "yearLabel": "年份",
+    "allYears": "全部年份",
+    "resetFilters": "重置",
+    "noResultsTitle": "没有匹配结果",
+    "noResultsText": "可以尝试更换关键词，或切回全部年份。",
+    "resultsPrefix": "结果数",
+    "emptyTitle": "当前没有论文",
+    "emptyText": "在 JSON 文件中新增条目后，这里会自动渲染。",
+    "maintainedBy": "整站内容通过 JSON 数据维护。论文页面无需手写 HTML。",
+    "footerNote": "适用于 GitHub Pages、双语研究门户与长期文献整理。"
+  }
+}

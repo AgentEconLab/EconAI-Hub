@@ -1,0 +1,309 @@
+{
+  "slug": "ai-for-economics",
+  "title": "AI for Economics",
+  "shortTitle": "AI for Economics",
+  "kicker": "Track A",
+  "description": "AI as a research tool for modeling, simulation, forecasting, and analysis of economic behavior and economic systems.",
+  "intro": "This track organizes work where AI primarily acts as a methodological instrument for economics research, spanning behavioral modeling, experiments, text analysis, causal evaluation, and forecasting.",
+  "readingPaths": [
+    {
+      "title": "Beginner route",
+      "label": "Overview → methods → cases",
+      "steps": [
+        "Read behavior modeling first to understand agent assumptions.",
+        "Then open experimental economics for validation settings.",
+        "Finish with forecasting or policy evaluation for applied perspectives."
+      ]
+    },
+    {
+      "title": "Simulation-oriented route",
+      "label": "Microfoundations → simulation → decision support",
+      "steps": [
+        "Start from economic agent behavior modeling.",
+        "Move to causal policy evaluation for counterfactual analysis.",
+        "Use forecasting and measurement for real-time deployment thinking."
+      ]
+    }
+  ],
+  "subcategories": [
+    {
+      "slug": "behavior-modeling",
+      "title": "Economic Agent Behavior Modeling",
+      "description": "How AI methods are used to model economic agents, bounded rationality, preferences, adaptation, and sequential decision processes.",
+      "fields": [
+        "Consumer and household decisions",
+        "Firm behavior and pricing",
+        "Macro–micro foundations"
+      ],
+      "recommendation": [
+        "Start with theory-grounded models.",
+        "Then compare RL-based and LLM-based agents.",
+        "Track how behavioral assumptions affect simulation realism."
+      ],
+      "timeline": [
+        {
+          "title": "General equilibrium and empirical macro traditions",
+          "description": "Aggregate structure, reduced-form relations, and calibration dominated early work."
+        },
+        {
+          "title": "DSGE and intertemporal microfoundations",
+          "description": "Explicit dynamic decision structure and shock propagation became central."
+        },
+        {
+          "title": "Heterogeneous-agent and agent-based simulation",
+          "description": "Distribution, interaction, and bottom-up emergence entered the mainstream."
+        },
+        {
+          "title": "RL and LLM agents",
+          "description": "AI methods enabled adaptive policies, language-based reasoning, and richer social feedback."
+        }
+      ],
+      "papers": [
+        {
+          "title": "Curated Slot: RL-Based Household Decision Modeling",
+          "authors": "To curate",
+          "year": 2024,
+          "venue": "Template entry",
+          "citation": "Citation to add.",
+          "abstract": "Use this slot for papers that learn household savings, labor, or portfolio decisions with sequential optimization methods.",
+          "tags": [
+            "RL",
+            "Household",
+            "Dynamic decision"
+          ],
+          "link": "#",
+          "featured": true,
+          "path": "Starter"
+        },
+        {
+          "title": "Curated Slot: LLM-Based Crowd Behavior Simulation",
+          "authors": "To curate",
+          "year": 2025,
+          "venue": "Template entry",
+          "citation": "Citation to add.",
+          "abstract": "Use this slot for work on language-model agents, bounded rationality, social interaction, and alignment to real human behavior.",
+          "tags": [
+            "LLM",
+            "Behavior",
+            "Simulation"
+          ],
+          "link": "#",
+          "featured": true,
+          "path": "Advanced"
+        },
+        {
+          "title": "Curated Slot: DSGE–AI Hybrid Behavioral Modeling",
+          "authors": "To curate",
+          "year": 2023,
+          "venue": "Template entry",
+          "citation": "Citation to add.",
+          "abstract": "Suitable for papers connecting economic structure with machine-learning-based policy functions or behavioral approximations.",
+          "tags": [
+            "DSGE",
+            "Hybrid",
+            "Policy"
+          ],
+          "link": "#",
+          "featured": false,
+          "path": "Bridge"
+        }
+      ]
+    },
+    {
+      "slug": "experimental-economics",
+      "title": "Experimental Economics Research",
+      "description": "AI agents and synthetic subjects in experimental economics, including mechanism pretesting, pilot screening, and human–AI strategic interaction.",
+      "fields": [
+        "Synthetic subjects",
+        "Mechanism pretesting",
+        "Human–AI interaction"
+      ],
+      "recommendation": [
+        "Use this branch for lab-style validation.",
+        "Compare simulated subjects with human participants.",
+        "Document what the synthetic agents can and cannot reproduce."
+      ],
+      "papers": [
+        {
+          "title": "Curated Slot: Synthetic Subjects for Mechanism Screening",
+          "authors": "To curate",
+          "year": 2025,
+          "venue": "Template entry",
+          "citation": "Citation to add.",
+          "abstract": "Best for papers that simulate participants before running real experiments, helping identify fragile treatments or instructions.",
+          "tags": [
+            "LLM",
+            "Experiment",
+            "Synthetic subjects"
+          ],
+          "link": "#",
+          "featured": true,
+          "path": "Starter"
+        },
+        {
+          "title": "Curated Slot: AI-Assisted Experimental Design",
+          "authors": "To curate",
+          "year": 2024,
+          "venue": "Template entry",
+          "citation": "Citation to add.",
+          "abstract": "Suitable for work on protocol design, robustness checks, treatment enumeration, or AI-guided pre-registration support.",
+          "tags": [
+            "Design",
+            "Experiment",
+            "Validation"
+          ],
+          "link": "#",
+          "featured": false,
+          "path": "Method"
+        }
+      ]
+    },
+    {
+      "slug": "economic-text-analysis",
+      "title": "Economic Text Data Analysis",
+      "description": "NLP and LLM methods for extracting narratives, expectations, policy signals, and institutional knowledge from economic text.",
+      "fields": [
+        "Policy and central bank text",
+        "News narratives",
+        "Firm reports and disclosures"
+      ],
+      "recommendation": [
+        "Begin with text representation and labeling choices.",
+        "Then compare narrative extraction with forecasting value.",
+        "Pay attention to domain-specific evaluation."
+      ],
+      "papers": [
+        {
+          "title": "Curated Slot: Policy Communication Mining with LLMs",
+          "authors": "To curate",
+          "year": 2025,
+          "venue": "Template entry",
+          "citation": "Citation to add.",
+          "abstract": "Use this card for papers that interpret policy statements, speeches, or regulatory communication with modern language models.",
+          "tags": [
+            "NLP",
+            "LLM",
+            "Policy text"
+          ],
+          "link": "#",
+          "featured": true,
+          "path": "Starter"
+        },
+        {
+          "title": "Curated Slot: Narrative Signals from Economic News",
+          "authors": "To curate",
+          "year": 2023,
+          "venue": "Template entry",
+          "citation": "Citation to add.",
+          "abstract": "Suitable for research on sentiment, topic dynamics, narrative shocks, and information transmission in economic text corpora.",
+          "tags": [
+            "Text",
+            "News",
+            "Measurement"
+          ],
+          "link": "#",
+          "featured": false,
+          "path": "Applied"
+        }
+      ]
+    },
+    {
+      "slug": "causal-policy-evaluation",
+      "title": "Causal Inference and Policy Evaluation",
+      "description": "AI-augmented methods for treatment effect estimation, counterfactual prediction, policy targeting, and structural policy analysis.",
+      "fields": [
+        "Heterogeneous treatment effects",
+        "Counterfactual estimation",
+        "Targeted policy evaluation"
+      ],
+      "recommendation": [
+        "Separate prediction from causal identification.",
+        "Show where AI improves policy targeting or heterogeneity estimation.",
+        "State the assumptions clearly."
+      ],
+      "papers": [
+        {
+          "title": "Curated Slot: Machine Learning for Heterogeneous Policy Effects",
+          "authors": "To curate",
+          "year": 2024,
+          "venue": "Template entry",
+          "citation": "Citation to add.",
+          "abstract": "Use this slot for studies combining causal estimation with flexible function approximation in policy analysis.",
+          "tags": [
+            "Causal",
+            "Policy",
+            "ML"
+          ],
+          "link": "#",
+          "featured": true,
+          "path": "Starter"
+        },
+        {
+          "title": "Curated Slot: Counterfactual Policy Learning",
+          "authors": "To curate",
+          "year": 2023,
+          "venue": "Template entry",
+          "citation": "Citation to add.",
+          "abstract": "Suitable for papers on policy targeting, uplift modeling, robust off-policy evaluation, or structural counterfactual systems.",
+          "tags": [
+            "Counterfactual",
+            "Evaluation",
+            "Decision"
+          ],
+          "link": "#",
+          "featured": false,
+          "path": "Method"
+        }
+      ]
+    },
+    {
+      "slug": "forecasting-measurement",
+      "title": "Economic Forecasting and Measurement",
+      "description": "AI methods for macroeconomic nowcasting, market prediction, alternative-data measurement, and real-time indicators.",
+      "fields": [
+        "Nowcasting",
+        "Alternative data",
+        "Forecast combination"
+      ],
+      "recommendation": [
+        "Use this line for deployment-oriented research.",
+        "Compare timeliness gains with interpretability trade-offs.",
+        "Document how alternative data enters the pipeline."
+      ],
+      "papers": [
+        {
+          "title": "Curated Slot: AI for Macroeconomic Nowcasting",
+          "authors": "To curate",
+          "year": 2024,
+          "venue": "Template entry",
+          "citation": "Citation to add.",
+          "abstract": "Ideal for papers on mixed-frequency indicators, high-frequency macro signals, and flexible real-time forecasting systems.",
+          "tags": [
+            "Forecasting",
+            "Macro",
+            "Time series"
+          ],
+          "link": "#",
+          "featured": true,
+          "path": "Starter"
+        },
+        {
+          "title": "Curated Slot: Alternative Data for Economic Measurement",
+          "authors": "To curate",
+          "year": 2025,
+          "venue": "Template entry",
+          "citation": "Citation to add.",
+          "abstract": "Suitable for work that turns platform, transaction, text, or remote-sensing data into economic indicators.",
+          "tags": [
+            "Measurement",
+            "Data",
+            "Indicator"
+          ],
+          "link": "#",
+          "featured": false,
+          "path": "Applied"
+        }
+      ]
+    }
+  ]
+}

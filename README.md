@@ -1,53 +1,75 @@
-# AI + Economics Research Atlas · GitHub Pages Starter
+# AI + Economics Research Atlas · Upgraded Version
 
-This project is a static GitHub Pages site for a high-visual-quality academic portal inspired by modern product landing pages.
+This version upgrades the original prototype into a **bilingual, JSON-driven, GitHub-Pages-friendly research website**.
 
-## Included structure
+## What changed
 
-- Home page with two main tracks:
-  - AI for Economics
-  - Agentic Economy
-- Track pages with clickable subcategories
-- Subcategory pages with:
-  - fine-grained field tags
-  - paper list cards
-  - an extra timeline for **Economic Agent Behavior Modeling**
-- Hash-based routing, so it works directly on GitHub Pages with no backend
+- Added **Chinese / English language switching**
+- Added **keyword search** and **year filtering** for papers
+- Switched to **JSON → automatic UI rendering**
+- Split the project into **data / js / css directories** for easier maintenance
+- Added a more polished **Claude-inspired visual style**
+- Added academic UI elements: **citation block, tags, reading paths**
+- Added **section reveal animations**, floating cards, and gradient background
+- Added **copy citation** interaction
 
-## Files
+## New project structure
 
-- `index.html` — page shell
-- `styles.css` — visual system, layout, glassmorphism, animations
-- `content.js` — all editable research content
-- `app.js` — client-side rendering and routing
+```text
+ai-econ-pages-upgraded/
+├── index.html
+├── assets/
+│   ├── css/
+│   │   └── main.css
+│   └── js/
+│       └── app.js
+└── data/
+    ├── en/
+    │   ├── site.json
+    │   └── tracks/
+    │       ├── ai-for-economics.json
+    │       └── agentic-economy.json
+    └── zh/
+        ├── site.json
+        └── tracks/
+            ├── ai-for-economics.json
+            └── agentic-economy.json
+```
 
-## How to deploy on GitHub Pages
+## How to add papers
 
-1. Create a GitHub repository.
-2. Upload all files in this folder.
-3. In GitHub, go to **Settings → Pages**.
-4. Under **Build and deployment**, choose:
-   - **Source**: Deploy from a branch
-   - **Branch**: `main` / root
-5. Save. GitHub will publish the site.
+You only need to edit the JSON files under:
 
-## How to edit content
+- `data/zh/tracks/*.json`
+- `data/en/tracks/*.json`
 
-Open `content.js` and replace the placeholder entries:
+Each paper card supports:
 
 - `title`
-- `abstract`
+- `authors`
 - `year`
-- `field`
+- `venue`
+- `citation`
+- `abstract`
+- `tags`
 - `link`
+- `featured`
+- `path`
 
-You can also:
+After updating JSON, the pages are rendered automatically. No manual HTML is needed for paper pages.
 
-- add more subcategories
-- add more papers per subcategory
-- modify the modeling timeline
+## Local preview
 
-## Notes
+Because the site uses `fetch()` to read JSON files, do **not** open `index.html` directly with `file://`.
+Use a local server instead:
 
-This package currently focuses on **front-end structure and presentation**.
-The paper entries are **placeholder/demo cards**, so you can replace them with your curated literature list.
+```bash
+cd ai-econ-pages-upgraded
+python3 -m http.server 8000
+```
+
+Then open `http://localhost:8000`.
+
+## GitHub Pages
+
+This project uses **hash routing** (`#/track/...`), so it works well on GitHub Pages without extra routing configuration.

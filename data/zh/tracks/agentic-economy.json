@@ -1,0 +1,275 @@
+{
+  "slug": "agentic-economy",
+  "title": "Agentic Economy",
+  "shortTitle": "Agentic Economy",
+  "kicker": "主线 B",
+  "description": "将 AI 以 agent 形式引入经济系统，使其参与生产、协作、交易与治理。",
+  "intro": "这条主线聚焦“AI agents 成为经济系统中的主动参与者”这一问题，涵盖生产、劳动、市场、制度与宏观后果等方向。",
+  "readingPaths": [
+    {
+      "title": "概念理解路径",
+      "label": "生产 → 劳动 → 市场",
+      "steps": [
+        "先看 AI agents 作为生产要素。",
+        "再看劳动市场与组织结构如何变化。",
+        "最后进入市场与治理问题。"
+      ]
+    },
+    {
+      "title": "政策分析路径",
+      "label": "市场 → 制度 → 宏观",
+      "steps": [
+        "先看定价、匹配与平台规则。",
+        "再看制度与监管。",
+        "最后进入宏观增长、分配与福利影响。"
+      ]
+    }
+  ],
+  "subcategories": [
+    {
+      "slug": "agents-as-factors",
+      "title": "AI Agents 作为生产要素",
+      "description": "研究 AI agents 作为生产投入、知识资本、数字工人或互补基础设施时的经济作用。",
+      "fields": [
+        "生产率与自动化",
+        "数字资本",
+        "与人类劳动的互补"
+      ],
+      "recommendation": [
+        "先界定 agent 到底生产什么。",
+        "再区分替代效应与互补效应。",
+        "最后把微观任务变化连到总量生产率上。"
+      ],
+      "papers": [
+        {
+          "title": "Curated Slot：生产系统中的 AI Agents",
+          "authors": "待整理",
+          "year": 2025,
+          "venue": "Template entry",
+          "citation": "Citation 待补充。",
+          "abstract": "适合放置研究 agent 作为可复用生产资产时，其能力积累、任务分解与生产效果的论文。",
+          "tags": [
+            "Agentic economy",
+            "Production",
+            "Productivity"
+          ],
+          "link": "#",
+          "featured": true,
+          "path": "Starter"
+        },
+        {
+          "title": "Curated Slot：将技能与记忆视作数字资本",
+          "authors": "待整理",
+          "year": 2026,
+          "venue": "Template entry",
+          "citation": "Citation 待补充。",
+          "abstract": "适合放置把 skills、memory 或 workflow traces 视为可交易、可积累数字生产要素的研究。",
+          "tags": [
+            "Digital capital",
+            "Skills",
+            "Assets"
+          ],
+          "link": "#",
+          "featured": true,
+          "path": "Bridge"
+        }
+      ]
+    },
+    {
+      "slug": "labor-and-organization",
+      "title": "劳动市场与组织变革",
+      "description": "研究 AI agents 如何重塑职业结构、企业边界、工作流、监督方式与人机协作。",
+      "fields": [
+        "任务替代",
+        "人机团队",
+        "企业组织"
+      ],
+      "recommendation": [
+        "先从 task level 的劳动影响入手。",
+        "再讨论协调与管理结构如何重组。",
+        "注意区分短期调整与长期重构。"
+      ],
+      "papers": [
+        {
+          "title": "Curated Slot：AI Agents 与劳动市场调整",
+          "authors": "待整理",
+          "year": 2025,
+          "venue": "Template entry",
+          "citation": "Citation 待补充。",
+          "abstract": "适合放置讨论替代、增强、任务重构与劳动需求变化的研究。",
+          "tags": [
+            "Labor",
+            "Organization",
+            "Agent"
+          ],
+          "link": "#",
+          "featured": true,
+          "path": "Starter"
+        },
+        {
+          "title": "Curated Slot：人机工作流重组",
+          "authors": "待整理",
+          "year": 2024,
+          "venue": "Template entry",
+          "citation": "Citation 待补充。",
+          "abstract": "适合放置围绕管理、监督、委托与模块化组织设计的研究。",
+          "tags": [
+            "Workflow",
+            "Firm",
+            "Coordination"
+          ],
+          "link": "#",
+          "featured": false,
+          "path": "Applied"
+        }
+      ]
+    },
+    {
+      "slug": "market-design",
+      "title": "市场、定价与协同机制",
+      "description": "研究当 AI agents 参与生产、议价、匹配与交易时，市场机制如何发生变化。",
+      "fields": [
+        "定价",
+        "匹配",
+        "数字资产交易"
+      ],
+      "recommendation": [
+        "先定义市场对象：任务、数据、memory 还是 skill。",
+        "再设计匹配与定价规则。",
+        "最后加入验证与治理约束。"
+      ],
+      "papers": [
+        {
+          "title": "Curated Slot：Agentic Economy 中的市场设计",
+          "authors": "待整理",
+          "year": 2026,
+          "venue": "Template entry",
+          "citation": "Citation 待补充。",
+          "abstract": "适合放置 agent-to-agent 市场中的定价、匹配、结算、平台规则与交易验证研究。",
+          "tags": [
+            "Market design",
+            "Pricing",
+            "Matching"
+          ],
+          "link": "#",
+          "featured": true,
+          "path": "Starter"
+        },
+        {
+          "title": "Curated Slot：新生成数字资产的定价问题",
+          "authors": "待整理",
+          "year": 2025,
+          "venue": "Template entry",
+          "citation": "Citation 待补充。",
+          "abstract": "适合放置对 skill、memory、data product 或 workflow 输出进行定价与估值的研究。",
+          "tags": [
+            "Pricing",
+            "Digital asset",
+            "Platform"
+          ],
+          "link": "#",
+          "featured": false,
+          "path": "Method"
+        }
+      ]
+    },
+    {
+      "slug": "institutions-governance",
+      "title": "制度、治理与监管",
+      "description": "研究 autonomous agents 进入市场、组织与公共系统后带来的制度与治理问题。",
+      "fields": [
+        "标准",
+        "责任归属",
+        "监管"
+      ],
+      "recommendation": [
+        "要明确 agent 行为的责任主体。",
+        "区分平台治理与公共监管。",
+        "把验证与执行机制讲清楚。"
+      ],
+      "papers": [
+        {
+          "title": "Curated Slot：Agentic Economic Systems 的治理",
+          "authors": "待整理",
+          "year": 2026,
+          "venue": "Template entry",
+          "citation": "Citation 待补充。",
+          "abstract": "适合放置制度设计、合规、安全标准与治理框架相关研究。",
+          "tags": [
+            "Governance",
+            "Regulation",
+            "Institution"
+          ],
+          "link": "#",
+          "featured": true,
+          "path": "Starter"
+        },
+        {
+          "title": "Curated Slot：Agent 市场中的验证与信任",
+          "authors": "待整理",
+          "year": 2025,
+          "venue": "Template entry",
+          "citation": "Citation 待补充。",
+          "abstract": "适合放置证书、审计、市场监督与交易可执行性相关研究。",
+          "tags": [
+            "Trust",
+            "Verification",
+            "Market"
+          ],
+          "link": "#",
+          "featured": false,
+          "path": "Applied"
+        }
+      ]
+    },
+    {
+      "slug": "macro-implications",
+      "title": "宏观与福利影响",
+      "description": "研究 autonomous agents 广泛部署后对增长、生产率、分配与福利的总量后果。",
+      "fields": [
+        "增长",
+        "分配",
+        "福利"
+      ],
+      "recommendation": [
+        "要把微观部署机制与宏观结果连起来。",
+        "说明转型摩擦与再分配渠道。",
+        "政策应对部分要写得明确。"
+      ],
+      "papers": [
+        {
+          "title": "Curated Slot：Agentic Systems 的宏观经济学",
+          "authors": "待整理",
+          "year": 2026,
+          "venue": "Template entry",
+          "citation": "Citation 待补充。",
+          "abstract": "适合放置关于 autonomous agents 广泛使用后生产率、增长、不平等与福利后果的建模论文。",
+          "tags": [
+            "Macro",
+            "Welfare",
+            "Growth"
+          ],
+          "link": "#",
+          "featured": true,
+          "path": "Starter"
+        },
+        {
+          "title": "Curated Slot：自主劳动的分配效应",
+          "authors": "待整理",
+          "year": 2025,
+          "venue": "Template entry",
+          "citation": "Citation 待补充。",
+          "abstract": "适合放置劳动收入份额、再分配与政策响应相关研究。",
+          "tags": [
+            "Distribution",
+            "Labor",
+            "Policy"
+          ],
+          "link": "#",
+          "featured": false,
+          "path": "Applied"
+        }
+      ]
+    }
+  ]
+}

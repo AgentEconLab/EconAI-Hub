@@ -1,0 +1,275 @@
+{
+  "slug": "agentic-economy",
+  "title": "Agentic Economy",
+  "shortTitle": "Agentic Economy",
+  "kicker": "Track B",
+  "description": "AI enters the economy in the form of agents that participate in production, coordination, exchange, and governance.",
+  "intro": "This track organizes work on economies where AI agents are active participants rather than passive tools, covering production, labor, markets, institutions, and macro implications.",
+  "readingPaths": [
+    {
+      "title": "Concept route",
+      "label": "Production → labor → markets",
+      "steps": [
+        "Begin with AI agents as production factors.",
+        "Then study labor and organizational change.",
+        "Finally open markets and governance for system design questions."
+      ]
+    },
+    {
+      "title": "Policy route",
+      "label": "Markets → institutions → macro",
+      "steps": [
+        "Start from pricing, matching, and platform rules.",
+        "Move to regulation and governance questions.",
+        "End with macro and welfare implications."
+      ]
+    }
+  ],
+  "subcategories": [
+    {
+      "slug": "agents-as-factors",
+      "title": "AI Agents as Production Factors",
+      "description": "Research on AI agents as productive inputs, knowledge capital, digital workers, or complementary infrastructure inside production systems.",
+      "fields": [
+        "Productivity and automation",
+        "Digital capital",
+        "Human complementarity"
+      ],
+      "recommendation": [
+        "Clarify what the agent produces.",
+        "Measure substitution versus complementarity.",
+        "Relate micro tasks to aggregate productivity."
+      ],
+      "papers": [
+        {
+          "title": "Curated Slot: AI Agents in Production Systems",
+          "authors": "To curate",
+          "year": 2025,
+          "venue": "Template entry",
+          "citation": "Citation to add.",
+          "abstract": "Use this slot for studies on capability accumulation, task decomposition, and production effects when agents become reusable productive assets.",
+          "tags": [
+            "Agentic economy",
+            "Production",
+            "Productivity"
+          ],
+          "link": "#",
+          "featured": true,
+          "path": "Starter"
+        },
+        {
+          "title": "Curated Slot: Skills and Memory as Digital Capital",
+          "authors": "To curate",
+          "year": 2026,
+          "venue": "Template entry",
+          "citation": "Citation to add.",
+          "abstract": "Suitable for work on treating skills, memory, or workflow traces as tradable and accumulable digital production factors.",
+          "tags": [
+            "Digital capital",
+            "Skills",
+            "Assets"
+          ],
+          "link": "#",
+          "featured": true,
+          "path": "Bridge"
+        }
+      ]
+    },
+    {
+      "slug": "labor-and-organization",
+      "title": "Labor Markets and Organizational Change",
+      "description": "How AI agents reshape occupations, firm boundaries, workflows, supervision, and human–AI team structures.",
+      "fields": [
+        "Task substitution",
+        "Human–AI teams",
+        "Firm organization"
+      ],
+      "recommendation": [
+        "Frame labor effects at the task level first.",
+        "Then discuss coordination and managerial redesign.",
+        "Separate short-run adjustment from long-run restructuring."
+      ],
+      "papers": [
+        {
+          "title": "Curated Slot: AI Agents and Labor Market Adjustment",
+          "authors": "To curate",
+          "year": 2025,
+          "venue": "Template entry",
+          "citation": "Citation to add.",
+          "abstract": "Use this card for work on displacement, augmentation, task redesign, and the changing composition of labor demand.",
+          "tags": [
+            "Labor",
+            "Organization",
+            "Agent"
+          ],
+          "link": "#",
+          "featured": true,
+          "path": "Starter"
+        },
+        {
+          "title": "Curated Slot: Human–AI Workflow Reorganization",
+          "authors": "To curate",
+          "year": 2024,
+          "venue": "Template entry",
+          "citation": "Citation to add.",
+          "abstract": "Suitable for studies of management, supervision, delegation, and modular organizational design around agents.",
+          "tags": [
+            "Workflow",
+            "Firm",
+            "Coordination"
+          ],
+          "link": "#",
+          "featured": false,
+          "path": "Applied"
+        }
+      ]
+    },
+    {
+      "slug": "market-design",
+      "title": "Markets, Pricing, and Coordination",
+      "description": "How markets adapt when AI agents produce, negotiate, price, match, and trade over digital assets, labor, or services.",
+      "fields": [
+        "Pricing",
+        "Matching",
+        "Digital asset exchange"
+      ],
+      "recommendation": [
+        "Start from market objects: tasks, data, memory, or skills.",
+        "Then define matching and pricing rules.",
+        "Finally specify verification and governance constraints."
+      ],
+      "papers": [
+        {
+          "title": "Curated Slot: Market Design in Agentic Economies",
+          "authors": "To curate",
+          "year": 2026,
+          "venue": "Template entry",
+          "citation": "Citation to add.",
+          "abstract": "Best for papers on pricing, matching, settlement, platform rules, and transaction verification in agent-to-agent markets.",
+          "tags": [
+            "Market design",
+            "Pricing",
+            "Matching"
+          ],
+          "link": "#",
+          "featured": true,
+          "path": "Starter"
+        },
+        {
+          "title": "Curated Slot: Pricing Newly Generated Digital Assets",
+          "authors": "To curate",
+          "year": 2025,
+          "venue": "Template entry",
+          "citation": "Citation to add.",
+          "abstract": "Suitable for research on valuing skills, memory, data products, or workflow outputs generated by autonomous agents.",
+          "tags": [
+            "Pricing",
+            "Digital asset",
+            "Platform"
+          ],
+          "link": "#",
+          "featured": false,
+          "path": "Method"
+        }
+      ]
+    },
+    {
+      "slug": "institutions-governance",
+      "title": "Institutions, Governance, and Regulation",
+      "description": "Policy and governance questions raised by autonomous agents interacting in markets, organizations, and public systems.",
+      "fields": [
+        "Standards",
+        "Accountability",
+        "Regulation"
+      ],
+      "recommendation": [
+        "Clarify who is responsible for agent actions.",
+        "Differentiate platform governance from public regulation.",
+        "Make verification and enforcement explicit."
+      ],
+      "papers": [
+        {
+          "title": "Curated Slot: Governing Agentic Economic Systems",
+          "authors": "To curate",
+          "year": 2026,
+          "venue": "Template entry",
+          "citation": "Citation to add.",
+          "abstract": "Use this slot for work on institutional design, compliance, safety, standards, and governance frameworks for autonomous economic agents.",
+          "tags": [
+            "Governance",
+            "Regulation",
+            "Institution"
+          ],
+          "link": "#",
+          "featured": true,
+          "path": "Starter"
+        },
+        {
+          "title": "Curated Slot: Verification and Trust in Agent Markets",
+          "authors": "To curate",
+          "year": 2025,
+          "venue": "Template entry",
+          "citation": "Citation to add.",
+          "abstract": "Suitable for studies on certificates, auditing, market oversight, and transaction enforceability in multi-agent platforms.",
+          "tags": [
+            "Trust",
+            "Verification",
+            "Market"
+          ],
+          "link": "#",
+          "featured": false,
+          "path": "Applied"
+        }
+      ]
+    },
+    {
+      "slug": "macro-implications",
+      "title": "Macroeconomic and Welfare Implications",
+      "description": "Aggregate growth, productivity, distribution, and welfare consequences of economies with increasingly autonomous AI agents.",
+      "fields": [
+        "Growth",
+        "Distribution",
+        "Welfare"
+      ],
+      "recommendation": [
+        "Connect micro deployment mechanisms to aggregate outcomes.",
+        "Document transition frictions and redistribution channels.",
+        "Discuss policy countermeasures clearly."
+      ],
+      "papers": [
+        {
+          "title": "Curated Slot: Macroeconomics of Agentic Systems",
+          "authors": "To curate",
+          "year": 2026,
+          "venue": "Template entry",
+          "citation": "Citation to add.",
+          "abstract": "Ideal for modeling papers on productivity, growth, inequality, and welfare under widespread deployment of autonomous agents.",
+          "tags": [
+            "Macro",
+            "Welfare",
+            "Growth"
+          ],
+          "link": "#",
+          "featured": true,
+          "path": "Starter"
+        },
+        {
+          "title": "Curated Slot: Distributional Effects of Autonomous Labor",
+          "authors": "To curate",
+          "year": 2025,
+          "venue": "Template entry",
+          "citation": "Citation to add.",
+          "abstract": "Suitable for research on redistribution, labor-income shares, and policy response to agent-driven productivity change.",
+          "tags": [
+            "Distribution",
+            "Labor",
+            "Policy"
+          ],
+          "link": "#",
+          "featured": false,
+          "path": "Applied"
+        }
+      ]
+    }
+  ]
+}
