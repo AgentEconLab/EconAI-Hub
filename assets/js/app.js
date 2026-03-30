@@ -1,3 +1,4 @@
+
 const DATA_CACHE = new Map();
 const state = {
   lang: localStorage.getItem('ae-lang') || 'zh',
@@ -30,10 +31,26 @@ async function fetchJSON(path) {
   return DATA_CACHE.get(path);
 }
 
+async function hydrateTrack(track, lang) {
+  const subcategories = await Promise.all(
+    (track.subcategories || []).map(async (sub) => {
+      const chapterFiles = sub.chapterFiles || [];
+      const chapters = await Promise.all(
+        chapterFiles.map((file) => fetchJSON(`data/${lang}/chapters/${file}.json`))
+      );
+      return { ...sub, chapters };
+    })
+  );
+  return { ...track, subcategories };
+}
+
 async function loadBundle(lang) {
   const site = await fetchJSON(`data/${lang}/site.json`);
   const tracks = await Promise.all(
-    site.trackFiles.map((slug) => fetchJSON(`data/${lang}/tracks/${slug}.json`))
+    site.trackFiles.map(async (slug) => {
+      const track = await fetchJSON(`data/${lang}/tracks/${slug}.json`);
+      return hydrateTrack(track, lang);
+    })
   );
   state.lang = lang;
   state.bundle = { site, tracks };
@@ -67,11 +84,35 @@ function getSubcategory(track, subSlug) {
   return track?.subcategories.find((sub) => sub.slug === subSlug);
 }
 
+function chapterPapers(chapter = {}) {
+  if ((chapter.papers || []).length) return chapter.papers;
+  return (chapter.paperGroups || []).flatMap((group) =>
+    (group.papers || []).map((paper) => ({ ...paper, groupTitle: paper.groupTitle || group.title }))
+  );
+}
+
+function withPaperContext(paper, track, sub, chapter = null) {
+  return {
+    ...paper,
+    trackSlug: track.slug,
+    trackTitle: track.title,
+    subSlug: sub.slug,
+    subTitle: sub.title,
+    chapterTitle: paper.chapterTitle || chapter?.chapterTitle || '',
+  };
+}
+
+function getSubcategoryPapers(track, sub) {
+  const ownPapers = (sub.papers || []).map((paper) => withPaperContext(paper, track, sub));
+  const chapterDerived = (sub.chapters || []).flatMap((chapter) =>
+    chapterPapers(chapter).map((paper) => withPaperContext(paper, track, sub, chapter))
+  );
+  return [...ownPapers, ...chapterDerived];
+}
+
 function allPapers() {
   return state.bundle.tracks.flatMap((track) =>
-    track.subcategories.flatMap((sub) =>
-      (sub.papers || []).map((paper) => ({ ...paper, trackSlug: track.slug, trackTitle: track.title, subSlug: sub.slug, subTitle: sub.title }))
-    )
+    track.subcategories.flatMap((sub) => getSubcategoryPapers(track, sub))
   );
 }
 
@@ -187,8 +228,13 @@ function readingPathCard(path) {
   `;
 }
 
-function searchPanel({ scopeId, title, eyebrow, note, papers }) {
+function searchPanel({ scopeId, title, eyebrow, note, papers, mode = 'card' }) {
   const years = yearsFromPapers(papers);
+  const listHtml = papers.length
+    ? (mode === 'lite'
+      ? `<div class="paper-list-lite js-filter-grid">${papers.map(renderPaperLiteItem).join('')}</div>`
+      : `<div class="paper-grid js-filter-grid">${papers.map(renderPaperCard).join('')}</div>`)
+    : emptyState();
   return `
     <section class="surface reveal js-filter-root" data-scope-id="${escapeHtml(scopeId)}">
       <div class="section-head">
@@ -213,9 +259,7 @@ function searchPanel({ scopeId, title, eyebrow, note, papers }) {
         <button class="button ghost" data-action="reset-filters">${escapeHtml(t('common.resetFilters'))}</button>
         <div class="result-badge"><strong data-role="count">${papers.length}</strong><span>${escapeHtml(t('common.resultsPrefix'))}</span></div>
       </div>
-      <div class="paper-grid js-filter-grid">
-        ${papers.length ? papers.map(renderPaperCard).join('') : emptyState()}
-      </div>
+      ${listHtml}
       <div class="empty-inline hidden" data-role="empty-inline">
         <h3>${escapeHtml(t('common.noResultsTitle'))}</h3>
         <p>${escapeHtml(t('common.noResultsText'))}</p>
@@ -233,11 +277,26 @@ function emptyState() {
   `;
 }
 
+function paperSearchText(paper) {
+  return [
+    paper.title,
+    paper.abstract,
+    paper.abstractEn,
+    paper.venue,
+    paper.citation,
+    paper.publicationStatus,
+    paper.subtheme,
+    paper.groupTitle,
+    paper.chapterTitle,
+    ...(paper.tags || []),
+    paper.trackTitle,
+    paper.subTitle,
+    paper.authors,
+  ].filter(Boolean).join(' ').toLowerCase();
+}
+
 function renderPaperCard(paper) {
-  const searchText = [paper.title, paper.abstract, paper.venue, paper.citation, paper.publicationStatus, paper.subtheme, paper.groupTitle, ...(paper.tags || []), paper.trackTitle, paper.subTitle, paper.authors]
-    .filter(Boolean)
-    .join(' ')
-    .toLowerCase();
+  const searchText = paperSearchText(paper);
   const location = paper.trackSlug && paper.subSlug
     ? `<a class="text-link" href="#/track/${escapeHtml(paper.trackSlug)}/subcategory/${escapeHtml(paper.subSlug)}">${escapeHtml(paper.trackTitle)} · ${escapeHtml(paper.subTitle)}</a>`
     : '';
@@ -260,13 +319,35 @@ function renderPaperCard(paper) {
         <div class="tag-row">${(paper.tags || []).map((tag) => `<button class="tag tag-button" type="button" data-action="tag-filter" data-tag-filter="${escapeHtml(tag)}">${escapeHtml(tag)}</button>`).join('')}</div>
         ${paper.path ? `<div class="route-pill"><span>${escapeHtml(t('common.routeLabel'))}</span><strong>${escapeHtml(paper.path)}</strong></div>` : ''}
       </div>
-      <div class="paper-actions">
-        ${paper.link && paper.link !== '#'
+      <div class="paper-actions hero-actions">
+        ${paper.link
           ? `<a class="button primary" href="${escapeHtml(paper.link)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t('common.originalLink'))}</a>`
           : `<span class="button disabled">${escapeHtml(t('common.originalLink'))}</span>`}
         <button class="button ghost" type="button" data-action="copy-citation" data-citation="${escapeHtml(paper.citation || '')}">${escapeHtml(t('common.copyCitation'))}</button>
       </div>
       ${location ? `<div class="paper-location">${location}</div>` : ''}
+    </article>
+  `;
+}
+
+function renderPaperLiteItem(paper) {
+  const searchText = paperSearchText(paper);
+  const meta = [paper.yearNote || paper.year, paper.publicationStatus || paper.venue, paper.subtheme].filter(Boolean);
+  const tags = (paper.tags || []).slice(0, 4);
+  return `
+    <article class="paper-lite-item" data-year="${escapeHtml(paper.year)}" data-search="${escapeHtml(searchText)}">
+      <div class="paper-lite-head">
+        <div>
+          <h3>${paper.link ? `<a class="text-link" href="${escapeHtml(paper.link)}" target="_blank" rel="noopener noreferrer">${escapeHtml(paper.title)}</a>` : escapeHtml(paper.title)}</h3>
+          ${meta.length ? `<div class="paper-lite-meta">${meta.map((item) => `<span>${escapeHtml(item)}</span>`).join('<span>·</span>')}</div>` : ''}
+        </div>
+        <span class="year-chip">${escapeHtml(paper.yearNote || paper.year)}</span>
+      </div>
+      ${paper.abstract ? `<p class="paper-lite-abstract">${escapeHtml(paper.abstract)}</p>` : ''}
+      <div class="paper-lite-footer">
+        <div class="tag-row">${tags.map((tag) => `<button class="tag tag-button" type="button" data-action="tag-filter" data-tag-filter="${escapeHtml(tag)}">${escapeHtml(tag)}</button>`).join('')}</div>
+        ${paper.link ? `<a class="text-link" href="${escapeHtml(paper.link)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t('common.originalLink'))}</a>` : ''}
+      </div>
     </article>
   `;
 }
@@ -303,30 +384,35 @@ function chapterOverviewCard(chapter) {
 }
 
 function renderChapterGroups(chapters = []) {
-  return chapters.map((chapter) => `
-    <section class="surface reveal">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">${escapeHtml(t('subcategoryPage.papersEyebrow'))}</div>
-          <h2>${escapeHtml(chapter.groupTitle || chapter.chapterTitle)}</h2>
+  return chapters.map((chapter) => {
+    const groups = (chapter.paperGroups || []).length
+      ? chapter.paperGroups
+      : [{ title: chapter.groupTitle || chapter.chapterTitle, papers: chapterPapers(chapter) }];
+    return `
+      <section class="surface reveal">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">${escapeHtml(t('subcategoryPage.papersEyebrow'))}</div>
+            <h2>${escapeHtml(chapter.groupTitle || chapter.chapterTitle)}</h2>
+          </div>
+          <p class="section-note">${escapeHtml(chapter.groupNote || '')}</p>
         </div>
-        <p class="section-note">${escapeHtml(chapter.groupNote || '')}</p>
-      </div>
-      <div class="chapter-stack">
-        ${(chapter.paperGroups || []).map((group) => `
-          <section class="group-block">
-            <div class="group-head">
-              <h3>${escapeHtml(group.title)}</h3>
-              <span class="pill">${group.papers?.length || 0} papers</span>
-            </div>
-            <div class="paper-grid">
-              ${(group.papers || []).map(renderPaperCard).join('')}
-            </div>
-          </section>
-        `).join('')}
-      </div>
-    </section>
-  `).join('');
+        <div class="chapter-stack">
+          ${groups.map((group) => `
+            <section class="group-block">
+              <div class="group-head">
+                <h3>${escapeHtml(group.title)}</h3>
+                <span class="pill">${group.papers?.length || 0} papers</span>
+              </div>
+              <div class="paper-list-lite">
+                ${(group.papers || []).map(renderPaperLiteItem).join('')}
+              </div>
+            </section>
+          `).join('')}
+        </div>
+      </section>
+    `;
+  }).join('');
 }
 
 function renderTimeline(timeline = []) {
@@ -426,7 +512,7 @@ function renderHome() {
 }
 
 function renderTrack(track) {
-  const papers = track.subcategories.flatMap((sub) => (sub.papers || []).map((paper) => ({ ...paper, trackSlug: track.slug, trackTitle: track.title, subSlug: sub.slug, subTitle: sub.title })));
+  const papers = track.subcategories.flatMap((sub) => getSubcategoryPapers(track, sub));
   return `
     ${pageShell({
       breadcrumb: `<a href="#/">${escapeHtml(t('common.homeCrumb'))}</a><span>·</span><span>${escapeHtml(track.title)}</span>`,
@@ -473,16 +559,16 @@ function renderTrack(track) {
 }
 
 function renderSubcategory(track, sub) {
-  const papers = (sub.papers || []).map((paper) => ({ ...paper, trackSlug: track.slug, trackTitle: track.title, subSlug: sub.slug, subTitle: sub.title }));
+  const papers = getSubcategoryPapers(track, sub);
   const recHtml = (sub.recommendation || []).length
     ? `<aside class="callout"><h3>${escapeHtml(t('common.routeLabel'))}</h3><ul class="compact-list">${sub.recommendation.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></aside>`
     : '';
   const chapters = (sub.chapters || []).map((chapter) => ({
     ...chapter,
-    papers: (chapter.papers || []).map((paper) => ({ ...paper, trackSlug: track.slug, trackTitle: track.title, subSlug: sub.slug, subTitle: sub.title })),
+    papers: chapterPapers(chapter).map((paper) => withPaperContext(paper, track, sub, chapter)),
     paperGroups: (chapter.paperGroups || []).map((group) => ({
       ...group,
-      papers: (group.papers || []).map((paper) => ({ ...paper, trackSlug: track.slug, trackTitle: track.title, subSlug: sub.slug, subTitle: sub.title }))
+      papers: (group.papers || []).map((paper) => withPaperContext({ ...paper, groupTitle: paper.groupTitle || group.title }, track, sub, chapter))
     }))
   }));
 
@@ -514,6 +600,7 @@ function renderSubcategory(track, sub) {
       eyebrow: t('subcategoryPage.finderEyebrow'),
       note: t('subcategoryPage.finderNote'),
       papers,
+      mode: 'lite',
     })}
 
     ${chapters.length ? renderChapterGroups(chapters) : ''}
@@ -567,7 +654,7 @@ function setupFilters() {
 function applyFilters(root) {
   const keyword = root.querySelector('[data-role="keyword"]')?.value?.trim().toLowerCase() || '';
   const year = root.querySelector('[data-role="year"]')?.value || 'all';
-  const cards = [...root.querySelectorAll('.paper-card')];
+  const cards = [...root.querySelectorAll('.paper-card, .paper-lite-item')];
   let visibleCount = 0;
 
   cards.forEach((card) => {

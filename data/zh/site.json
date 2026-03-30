@@ -12,7 +12,7 @@
   },
   "hero": {
     "eyebrow": "研究入口 · 中英双语 · JSON 驱动",
-    "titlePrefix": "智能经济研究",
+    "titlePrefix": "智能经济",
     "titleAccent": "AI × Economics",
     "description": "从两条主线进入该领域：按主题浏览、按子方向展开、按关键词与年份搜索论文，并通过结构化 JSON 文件持续维护内容。",
     "primaryCta": "浏览研究主线",
