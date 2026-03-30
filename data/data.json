@@ -1,0 +1,54 @@
+{
+  "en": {
+    "title": "AI + Economics",
+    "subtitle": "Research Hub",
+    "sections": [
+      {
+        "id": "ai",
+        "title": "AI for Economics"
+      },
+      {
+        "id": "agent",
+        "title": "Agentic Economy"
+      }
+    ],
+    "papers": [
+      {
+        "title": "MF-LLM",
+        "year": 2025,
+        "tags": [
+          "LLM"
+        ],
+        "citation": "Mi et al.",
+        "abstract": "Mean field LLM",
+        "link": "#"
+      }
+    ]
+  },
+  "zh": {
+    "title": "AI + 经济学",
+    "subtitle": "研究平台",
+    "sections": [
+      {
+        "id": "ai",
+        "title": "AI for Economics"
+      },
+      {
+        "id": "agent",
+        "title": "Agentic Economy"
+      }
+    ],
+    "papers": [
+      {
+        "title": "MF-LLM",
+        "year": 2025,
+        "tags": [
+          "LLM"
+        ],
+        "citation": "米祈睿",
+        "abstract": "平均场大模型",
+        "link": "#"
+      }
+    ]
+  }
+}

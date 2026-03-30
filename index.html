@@ -1,97 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI + Economics Research Atlas</title>
-    <meta
-      name="description"
-      content="A curated entry portal for AI for Economics and the Agentic Economy."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="site-shell">
-      <div class="ambient ambient-a"></div>
-      <div class="ambient ambient-b"></div>
-      <header class="topbar">
-        <a href="#/" class="brand">
-          <span class="brand-mark">AE</span>
-          <span class="brand-text">AI + Economics Research Atlas</span>
-        </a>
-        <nav class="topnav">
-          <a href="#/">Home</a>
-          <a href="#/track/ai-for-economics">AI for Economics</a>
-          <a href="#/track/agentic-economy">Agentic Economy</a>
-        </nav>
-      </header>
+<head>
+<meta charset="UTF-8">
+<title>AI + Economics</title>
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
 
-      <main id="app"></main>
-    </div>
+<div class="lang-switch">
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('zh')">中文</button>
+</div>
 
-    <template id="hero-template">
-      <section class="hero reveal">
-        <div class="hero-copy">
-          <div class="eyebrow">Research gateway · curated learning map</div>
-          <h1>
-            A high-clarity entry point into
-            <span class="serif">AI × Economics</span>
-          </h1>
-          <p class="hero-text">
-            This site is designed as a structured reading portal for interdisciplinary
-            research at the intersection of artificial intelligence and economics.
-            Start from two core tracks, then drill down into subfields, timelines, and curated paper lists.
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="#tracks">Explore tracks</a>
-            <a class="button secondary" href="#/track/ai-for-economics">Open AI for Economics</a>
-          </div>
-        </div>
-        <div class="hero-panel glass-card">
-          <div class="mini-grid">
-            <div class="mini-card">
-              <span class="mini-label">Track A</span>
-              <h3>AI for Economics</h3>
-              <p>AI as a research tool for modeling, simulation, prediction, and policy analysis.</p>
-            </div>
-            <div class="mini-card">
-              <span class="mini-label">Track B</span>
-              <h3>Agentic Economy</h3>
-              <p>AI agents as economic actors entering production, markets, and governance structures.</p>
-            </div>
-            <div class="mini-stat">
-              <span>Structured tracks</span>
-              <strong>2</strong>
-            </div>
-            <div class="mini-stat">
-              <span>Primary subfields</span>
-              <strong>10+</strong>
-            </div>
-          </div>
-        </div>
-      </section>
+<section class="hero">
+<h1 id="title"></h1>
+<p id="subtitle"></p>
+</section>
 
-      <section id="tracks" class="section reveal">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">Core structure</div>
-            <h2>Choose a research track</h2>
-          </div>
-          <p class="section-note">
-            Each track opens into a layered knowledge map with subcategories, paper lists, and expandable reading cards.
-          </p>
-        </div>
-        <div class="track-grid"></div>
-      </section>
-    </template>
+<section class="cards" id="main"></section>
 
-    <script src="content.js"></script>
-    <script src="app.js"></script>
-  </body>
+<script src="./js/app.js"></script>
+</body>
 </html>
